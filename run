@@ -11,7 +11,7 @@ set -o pipefail
 
 export ACCOUNT_ID=""
 export REGION=""
-export ECR_REPOSITORY="sample"
+export ECR_REPOSITORY=""
 CLUSTER_NAME=""
 
 export VERSION=${CIRCLE_SHA1}

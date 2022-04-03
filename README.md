@@ -56,6 +56,15 @@ export REGION="<INSERT-THE-AWS-REGION-HERE>"
 export ECR_REPOSITORY="<INSERT-THE-ECR-REPOSITORY-TO-BE-USED>"
 CLUSTER_NAME="<INSERT-THE-CLUSTER-TO-BE-USED-HERE>"
 ```
+e.g
+
+```bash
+export ACCOUNT_ID="651625333333"
+export REGION="us-east-1"
+export ECR_REPOSITORY="sample"
+CLUSTER_NAME="ecosia-app-development”
+```
+
 Then push the source code to a GITHUB repository and connect the repository to a circleci project.
 The test-build-deploy workflow will run and it will test and deploy the service to Kubernetes.
 
