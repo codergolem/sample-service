@@ -1,5 +1,4 @@
 from service.app import main, health
-from flask import Response
 
 
 def test_main_request():
