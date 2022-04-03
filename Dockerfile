@@ -1,6 +1,6 @@
 FROM python:3.9.12
 LABEL maintainer="mario.castellanos@posteo.mx"
-LABEL app="sample"
+LABEL app="ecosia"
 LABEL use="Development"
 
 RUN pip install --no-cache-dir pipenv=="2022.3.28"
