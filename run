@@ -9,9 +9,9 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export ACCOUNT_ID="651625262782"
-export REGION="us-east-1"
-CLUSTER_NAME="ecosia-app-development"
+export ACCOUNT_ID=""
+export REGION=""
+CLUSTER_NAME=""
 export VERSION=${CIRCLE_SHA1}
 REGISTRY_URL="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com"
 SERVICE_NAME="sample"
