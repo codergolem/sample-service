@@ -35,8 +35,7 @@ task_deploy() {
 
 task_test() {
   pip install --no-cache-dir pipenv=="2022.3.28"
-  pipenv shell
-  pipenv install --dev
+  pipenv install --dev --system
   python3 -m pytest spec/tests.py
 }
 
