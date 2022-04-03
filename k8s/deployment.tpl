@@ -22,7 +22,7 @@ spec:
         app: sample-app
     spec:
       containers:
-        - image: ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/sample:${VERSION}
+        - image: ${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com/${ECR_REPOSITORY}:${VERSION}
           name: sample-app
           resources:
             limits:

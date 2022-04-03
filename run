@@ -11,16 +11,17 @@ set -o pipefail
 
 export ACCOUNT_ID=""
 export REGION=""
+export ECR_REPOSITORY="sample"
 CLUSTER_NAME=""
+
 export VERSION=${CIRCLE_SHA1}
 REGISTRY_URL="${ACCOUNT_ID}.dkr.ecr.${REGION}.amazonaws.com"
-SERVICE_NAME="sample"
-FULL_IMAGE_NAME="${REGISTRY_URL}/${SERVICE_NAME}:${VERSION}"
+FULL_IMAGE_NAME="${REGISTRY_URL}/${ECR_REPOSITORY}:${VERSION}"
 
 
 task_deploy() {
     aws ecr get-login-password \
-                                                    --region ${REGION} \
+                                                    --region "${REGION}" \
                                                     | docker login \
                                                     --username AWS \
                                                     --password-stdin "${REGISTRY_URL}"

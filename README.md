@@ -11,7 +11,7 @@ The service is a Python flask application that runs on Kubernetes (AWS-EKS) and 
 - [pipenv](https://pipenv.pypa.io/en/latest/install/)
 - kubectl
 - Access to an AWS-EKS cluster with the ALB-Ingress controller installed to deploy the service.
-- An AWS ECR registry with the name "sample" to host the doker images.
+- An AWS ECR registry to host the docker images.
 - Access to Github and Circleci to deploy the circleci project.
 
 ## Local Development
@@ -45,7 +45,7 @@ python3 -m pytest spec/functional_tests.py
 
 ## Production Deployment
 
-In order to to deploy the service to an EKS-cluster the deployment script must be configured to use the corresponding AWS account and region, for this edit the ```run``` script as shown below:
+In order to to deploy the service to an EKS-cluster the deployment script must be configured to use the corresponding AWS account,region,cluster and ecr repository for this edit the ```run``` script as shown below:
 ```bash
 set -o errexit
 set -o nounset
@@ -53,6 +53,7 @@ set -o pipefail
 
 export ACCOUNT_ID="<INSERT-YOUR-AWS-ACCOUNT-ID-HERE>"
 export REGION="<INSERT-THE-AWS-REGION-HERE>"
+export ECR_REPOSITORY="<INSERT-THE-ECR-REPOSITORY-TO-BE-USED>"
 CLUSTER_NAME="<INSERT-THE-CLUSTER-TO-BE-USED-HERE>"
 ```
 Then push the source code to a GITHUB repository and connect the repository to a circleci project.
