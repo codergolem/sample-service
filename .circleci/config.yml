@@ -7,7 +7,7 @@ jobs:
       - checkout
       - run:
           name: run unit tests
-          command: ./run.sh test
+          command: ./run test
   deploy:
     docker:
       - image: cimg/base:2021.04
@@ -19,7 +19,7 @@ jobs:
           command: ./install_tools.sh
       - run:
           name: build-push-deploy
-          command: ./run.sh deploy
+          command: ./run deploy
 workflows:
   test-build-deploy:
     jobs:
