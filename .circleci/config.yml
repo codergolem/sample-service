@@ -7,8 +7,8 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
-          name: install the aws cli
-          command: ./install_aws_cli.sh
+          name: install aws-cli, kubectl, envsubst
+          command: ./install_tools.sh
       - run:
           name: build & push
           command: ./run.sh update
