@@ -10,7 +10,8 @@ The service is a Python flask application that runs on Kubernetes (AWS-EKS) and 
 - docker-compose
 - [pipenv](https://pipenv.pypa.io/en/latest/install/)
 - kubectl
-- Access to an AWS-EKS cluster with the ALB-Ingress controller installed.
+- Access to an AWS-EKS cluster with the ALB-Ingress controller installed to deploy the service.
+- An AWS ECR registry with the name "sample" to host the doker images.
 - Access to Github and Circleci to deploy the circleci project.
 
 ## Local Development
