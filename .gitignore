@@ -1,1 +1,2 @@
 k8s/config/deployment.yml
+.pytest_cache
