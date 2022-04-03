@@ -19,7 +19,7 @@ SERVICE_NAME="sample"
 FULL_IMAGE_NAME="${REGISTRY_URL}/${SERVICE_NAME}:${VERSION}"
 
 
-task_update() {
+task_deploy() {
     aws ecr get-login-password \
                                                     --region ${REGION} \
                                                     | docker login \
@@ -33,15 +33,10 @@ task_update() {
     kubectl apply -f k8s/config
 }
 
-task_infra() {
+task_test() {
     cd infra
     terraform init
     terraform apply
-}
-
-task_deploy() {
-  task_infra
-  task_update
 }
 
 main() {
@@ -53,9 +48,8 @@ main() {
     echo "task '${task}' not valid, valid tasks are:
 
       Usage:
-        ./run update                    -- Deploy a new application version to Kubernetes
-        ./run deploy                     
-        -- Deploy the entire infrastructure and application stack
+        ./run deploy                   -- Deploy a new application version to Kubernetes
+        ./run test                        -- Run the tests
       "
           exit 1
 
