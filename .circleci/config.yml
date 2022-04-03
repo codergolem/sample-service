@@ -1,0 +1,15 @@
+version: 2.1
+jobs:
+  publish:
+    docker:
+      - image: cimg/base:2021.04
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run:
+          name: build & push
+          command: ./run.sh update
+workflows:
+  build_test_deploy:
+    jobs:
+      - publish
