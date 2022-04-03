@@ -34,9 +34,10 @@ task_deploy() {
 }
 
 task_test() {
-    cd infra
-    terraform init
-    terraform apply
+  pip install --no-cache-dir pipenv=="2022.3.28"
+  pipenv shell
+  pipenv install --dev
+  python3 -m pytest spec/tests.py
 }
 
 main() {
