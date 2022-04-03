@@ -51,10 +51,10 @@ set -o errexit
 set -o nounset
 set -o pipefail
 
-export ACCOUNT_ID="<INSERT-YOUR-AWS-ACCOUNT-ID-HERE>"
-export REGION="<INSERT-THE-AWS-REGION-HERE>"
-export ECR_REPOSITORY="<INSERT-THE-ECR-REPOSITORY-TO-BE-USED>"
-CLUSTER_NAME="<INSERT-THE-CLUSTER-TO-BE-USED-HERE>"
+export ACCOUNT_ID="651625262782"
+export REGION="us-east-1"
+export ECR_REPOSITORY="sample"
+CLUSTER_NAME="ecosia-app-development"
 ```
 Then push the source code to a GITHUB repository and connect the repository to a circleci project.
 The test-build-deploy workflow will run and it will test and deploy the service to Kubernetes.
