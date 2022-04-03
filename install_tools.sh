@@ -11,7 +11,7 @@ sudo ./aws/install
 ### envsubst ###
 ##############
 
-apt-get -y update && apt-get install -y --no-install-recommends gettext
+sudo apt-get -y update && sudo apt-get install -y --no-install-recommends gettext
 
 
 ##############
@@ -24,4 +24,4 @@ KUBECTL_DOWNLOAD_URL="https://storage.googleapis.com/kubernetes-release/release/
 curl -LO \
                 "${KUBECTL_DOWNLOAD_URL}" \
                 && chmod u+x ./kubectl \
-                && mv ./kubectl /usr/local/bin/kubectl
+                && sudo mv ./kubectl /usr/local/bin/kubectl
