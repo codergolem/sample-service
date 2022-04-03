@@ -7,6 +7,9 @@ jobs:
       - checkout
       - setup_remote_docker
       - run:
+          name: install the aws cli
+          command: ./install_aws_cl.sh
+      - run:
           name: build & push
           command: ./run.sh update
 workflows:
