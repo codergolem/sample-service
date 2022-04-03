@@ -1,6 +1,14 @@
 version: 2.1
 jobs:
-  publish:
+  test:
+    docker:
+      - image: python:3.9.12
+    steps:
+      - checkout
+      - run:
+          name: run unit tests
+          command: ./run.sh test
+  deploy:
     docker:
       - image: cimg/base:2021.04
     steps:
@@ -10,9 +18,9 @@ jobs:
           name: install aws-cli, kubectl, envsubst
           command: ./install_tools.sh
       - run:
-          name: build & push
-          command: ./run.sh update
+          name: build-push-deploy
+          command: ./run.sh deploy
 workflows:
-  build_test_deploy:
+  test-build-deploy:
     jobs:
-      - publish
+      - test

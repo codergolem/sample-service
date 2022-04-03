@@ -50,7 +50,7 @@ main() {
 
       Usage:
         ./run deploy                   -- Deploy a new application version to Kubernetes
-        ./run test                        -- Run the tests
+        ./run test                        -- Run the unit tests
       "
           exit 1
 
