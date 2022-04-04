@@ -45,28 +45,14 @@ python3 -m pytest spec/functional_tests.py
 
 ## Production Deployment
 
-In order to to deploy the service to an EKS-cluster the deployment script must be configured to use the corresponding AWS account,region,cluster and ecr repository for this edit the ```run``` script as shown below:
-```bash
-set -o errexit
-set -o nounset
-set -o pipefail
+In order to to deploy the service to an EKS-cluster the circle-ci project must have the following env vars available:
 
-export ACCOUNT_ID="<INSERT-YOUR-AWS-ACCOUNT-ID-HERE>"
-export REGION="<INSERT-THE-AWS-REGION-HERE>"
-export ECR_REPOSITORY="<INSERT-THE-ECR-REPOSITORY-TO-BE-USED>"
-CLUSTER_NAME="<INSERT-THE-CLUSTER-TO-BE-USED-HERE>"
-```
-e.g
+"AWS_ACCOUNT_ID" -> The aws account where the EKS cluster is deployed. 
+"AWS_DEFAULT_REGION" -> The aws region where the EKS cluster and ECR registry are deployed.
+"AWS_ECR_REPOSITORY_NAME" -> The ECR repository name where the images will be published to.
+"AWS_CLUSTER_NAME" -> The EKS cluster name to be used.
+"AWS_ACCESS_KEY_ID" -> The aws access key.
+"AWS_SECRET_ACCESS_KEY" -> The aws secret key.
 
-```bash
-export ACCOUNT_ID="651625333333"
-export REGION="us-east-1"
-export ECR_REPOSITORY="sample"
-CLUSTER_NAME="ecosia-app-development"
-```
-
-Then push the source code to a GITHUB repository and connect the repository to a circleci project.
+To run the production deployment push the source code to a GITHUB repository and connect the repository to a circleci project.
 The test-build-deploy workflow will run and it will test and deploy the service to Kubernetes.
-
-**IMPORTANT**: This setup assumes the circleci project has been provisioned with their corresponding AWS credentials to deploy the service to Kubernetes.
-Configure the credentials by passing them as [env vars]([https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html) to the circleci project.
