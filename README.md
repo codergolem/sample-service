@@ -48,7 +48,7 @@ python3 -m pytest spec/functional_tests.py
 In order to to deploy the service to an EKS-cluster the circle-ci project must have the following env vars available:
 
 "AWS_ACCOUNT_ID" -> The aws account where the EKS cluster is deployed. 
-"AWS_DEFAULT_REGION" -> The aws region where the EKS cluster and ECR registry are deployed.
+"AWS_DEFAULT_REGION" -> The aws region where the EKS cluster and ECR repository are deployed.
 "AWS_ECR_REPOSITORY_NAME" -> The ECR repository name where the images will be published to.
 "AWS_CLUSTER_NAME" -> The EKS cluster name to be used.
 "AWS_ACCESS_KEY_ID" -> The aws access key.
