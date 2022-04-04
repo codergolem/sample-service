@@ -5,7 +5,6 @@ metadata:
   labels:
     app: sample-app
 spec:
-  replicas: 2
   progressDeadlineSeconds: 600
   revisionHistoryLimit: 5
   strategy:
