@@ -1,0 +1,11 @@
+---
+apiVersion: policy/v1beta1
+kind: PodDisruptionBudget
+metadata:
+  name: sample-app
+  namespace: default
+spec:
+  selector:
+    matchLabels:
+      app: sample-app
+  minAvailable: 1
