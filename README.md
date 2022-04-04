@@ -16,7 +16,7 @@ The service is a Python flask application that runs on Kubernetes (AWS-EKS) and 
 
 ## Local Development
 
-To test the service use docker-compose:
+To run the service locally use docker-compose:
 
 ```bash
 docker-compose up -d
